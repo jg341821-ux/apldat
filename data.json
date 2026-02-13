@@ -3,36 +3,99 @@
   "hero": {
     "title": "PRÓXIMO\nPARTIDO"
   },
-  "fixture": [
-    {
-      "league": "Primera División",
-      "dateText": "Dom, 15/2, 19:30",
-      "home": { "name": "Boca Juniors", "badge": "assets/boca.png" },
-      "away": { "name": "Platense", "badge": "assets/platense.png" },
-      "footer": "Apertura · Jornada 5 de 16"
-    },
-    {
-      "league": "Primera División",
-      "dateText": "Mié, 18/2, 21:00",
-      "home": { "name": "Boca Juniors", "badge": "assets/boca.png" },
-      "away": { "name": "Lanús", "badge": "assets/lanus.png" },
-      "footer": "Apertura · Jornada 6 de 16"
-    },
-    {
-      "league": "Primera División",
-      "dateText": "Dom, 22/2, 17:00",
-      "home": { "name": "River", "badge": "assets/river.png" },
-      "away": { "name": "Boca Juniors", "badge": "assets/boca.png" },
-      "footer": "Apertura · Jornada 7 de 16"
-    },
-    {
-      "league": "Primera División",
-      "dateText": "Sáb, 28/2, 20:30",
-      "home": { "name": "Boca Juniors", "badge": "assets/boca.png" },
-      "away": { "name": "Vélez", "badge": "assets/velez.png" },
-      "footer": "Apertura · Jornada 8 de 16"
-    }
-  ],
+  "fixture": "fixture": [
+  {
+    "league": "Primera División",
+    "dateText": "Dom, 15/2, 19:30",
+    "home": { "name": "Boca Juniors", "badge": "assets/boca.png" },
+    "away": { "name": "Platense", "badge": "assets/platense.png" },
+    "footer": "Apertura · Jornada 5 de 16"
+  },
+  {
+    "league": "Primera División",
+    "dateText": "Vie, 20/2, 20:00",
+    "home": { "name": "Boca Juniors", "badge": "assets/boca.png" },
+    "away": { "name": "Racing", "badge": "assets/racing.png" },
+    "footer": "Apertura · Jornada 6 de 16 (Interzonal)"
+  },
+  {
+    "league": "Copa Argentina",
+    "dateText": "Mar, 24/2, 11:00",
+    "home": { "name": "Boca Juniors", "badge": "assets/boca.png" },
+    "away": { "name": "Gimnasia (Chivilcoy)", "badge": "assets/gimnasia_chivilcoy.png" },
+    "footer": "Copa Argentina · 32avos de final"
+  },
+  {
+    "league": "Primera División",
+    "dateText": "Sáb, 28/2, 17:45",
+    "home": { "name": "Boca Juniors", "badge": "assets/boca.png" },
+    "away": { "name": "Gimnasia (Mendoza)", "badge": "assets/gimnasia_m.png" },
+    "footer": "Apertura · Jornada 8 de 16"
+  },
+  {
+    "league": "Primera División",
+    "dateText": "Mié, 4/3, 21:00",
+    "home": { "name": "Lanús", "badge": "assets/lanus.png" },
+    "away": { "name": "Boca Juniors", "badge": "assets/boca.png" },
+    "footer": "Apertura · Jornada 7 de 16"
+  },
+  {
+    "league": "Primera División",
+    "dateText": "Dom, 8/3, 19:15",
+    "home": { "name": "Central Córdoba", "badge": "assets/central_cordoba.png" },
+    "away": { "name": "Boca Juniors", "badge": "assets/boca.png" },
+    "footer": "Apertura · Jornada 9 de 16"
+  },
+  {
+    "league": "Primera División",
+    "dateText": "Mié, 11/3, 19:45",
+    "home": { "name": "Boca Juniors", "badge": "assets/boca.png" },
+    "away": { "name": "San Lorenzo", "badge": "assets/sanlorenzo.png" },
+    "footer": "Apertura · Jornada 10 de 16"
+  },
+  {
+    "league": "Primera División",
+    "dateText": "Dom, 15/3, 22:00",
+    "home": { "name": "Unión", "badge": "assets/union.png" },
+    "away": { "name": "Boca Juniors", "badge": "assets/boca.png" },
+    "footer": "Apertura · Jornada 11 de 16"
+  },
+  {
+    "league": "Primera División",
+    "dateText": "Dom, 22/3, 20:00",
+    "home": { "name": "Boca Juniors", "badge": "assets/boca.png" },
+    "away": { "name": "Instituto", "badge": "assets/instituto.png" },
+    "footer": "Apertura · Jornada 12 de 16"
+  },
+  {
+    "league": "Primera División",
+    "dateText": "Dom, 5/4, A confirmar",
+    "home": { "name": "Talleres", "badge": "assets/talleres.png" },
+    "away": { "name": "Boca Juniors", "badge": "assets/boca.png" },
+    "footer": "Apertura · Jornada 13 de 16"
+  },
+  {
+    "league": "Primera División",
+    "dateText": "Dom, 12/4, A confirmar",
+    "home": { "name": "Boca Juniors", "badge": "assets/boca.png" },
+    "away": { "name": "Independiente", "badge": "assets/independiente.png" },
+    "footer": "Apertura · Jornada 14 de 16"
+  },
+  {
+    "league": "Primera División",
+    "dateText": "Dom, 19/4, A confirmar",
+    "home": { "name": "River", "badge": "assets/river.png" },
+    "away": { "name": "Boca Juniors", "badge": "assets/boca.png" },
+    "footer": "Apertura · Jornada 15 de 16 (Interzonal)"
+  },
+  {
+    "league": "Primera División",
+    "dateText": "Dom, 26/4, A confirmar",
+    "home": { "name": "Defensa y Justicia", "badge": "assets/defensa_y_justicia.png" },
+    "away": { "name": "Boca Juniors", "badge": "assets/boca.png" },
+    "footer": "Apertura · Jornada 16 de 16"
+  }
+],
   "standings": [
   { "team": "Vélez", "pj": 4, "g": 3, "e": 1, "p": 0, "gf": 6, "gc": 3, "pts": 10 },
   { "team": "Lanús", "pj": 4, "g": 2, "e": 2, "p": 0, "gf": 8, "gc": 6, "pts": 8 },
