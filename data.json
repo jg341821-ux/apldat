@@ -1,1 +1,55 @@
+{
+  "updatedAt": "2026-02-13T13:30:00-03:00",
+  "hero": {
+    "title": "PRÓXIMO\nPARTIDO"
+  },
+  "fixture": [
+    {
+      "league": "Primera División",
+      "dateText": "Dom, 15/2, 19:30",
+      "home": { "name": "Boca Juniors", "badge": "assets/boca.png" },
+      "away": { "name": "Platense", "badge": "assets/platense.png" },
+      "footer": "Apertura · Jornada 5 de 16"
+    },
+    {
+      "league": "Primera División",
+      "dateText": "Mié, 18/2, 21:00",
+      "home": { "name": "Boca Juniors", "badge": "assets/boca.png" },
+      "away": { "name": "Lanús", "badge": "assets/lanus.png" },
+      "footer": "Apertura · Jornada 6 de 16"
+    },
+    {
+      "league": "Primera División",
+      "dateText": "Dom, 22/2, 17:00",
+      "home": { "name": "River", "badge": "assets/river.png" },
+      "away": { "name": "Boca Juniors", "badge": "assets/boca.png" },
+      "footer": "Apertura · Jornada 7 de 16"
+    },
+    {
+      "league": "Primera División",
+      "dateText": "Sáb, 28/2, 20:30",
+      "home": { "name": "Boca Juniors", "badge": "assets/boca.png" },
+      "away": { "name": "Vélez", "badge": "assets/velez.png" },
+      "footer": "Apertura · Jornada 8 de 16"
+    }
+  ],
+  "standings": [
+    { "team": "Vélez", "pj": 4, "g": 3, "e": 1, "p": 0, "gf": 6, "gc": 3, "pts": 10 },
+    { "team": "Lanús", "pj": 4, "g": 2, "e": 2, "p": 0, "gf": 6, "gc": 2, "pts": 8 },
+    { "team": "Defensa y Justicia", "pj": 4, "g": 2, "e": 2, "p": 0, "gf": 4, "gc": 2, "pts": 8 },
+    { "team": "Estudiantes", "pj": 4, "g": 2, "e": 2, "p": 0, "gf": 4, "gc": 2, "pts": 8 },
+    { "team": "Platense", "pj": 4, "g": 2, "e": 1, "p": 1, "gf": 4, "gc": 3, "pts": 7 },
+    { "team": "Boca Juniors", "pj": 4, "g": 2, "e": 1, "p": 1, "gf": 5, "gc": 4, "pts": 7 },
+    { "team": "Independiente", "pj": 4, "g": 1, "e": 3, "p": 0, "gf": 3, "gc": 2, "pts": 6 },
+    { "team": "San Lorenzo", "pj": 4, "g": 1, "e": 3, "p": 0, "gf": 2, "gc": 1, "pts": 6 },
+    { "team": "Gimnasia", "pj": 4, "g": 2, "e": 0, "p": 2, "gf": 5, "gc": 3, "pts": 6 },
+    { "team": "Unión", "pj": 4, "g": 1, "e": 2, "p": 1, "gf": 3, "gc": 3, "pts": 5 },
+    { "team": "Talleres", "pj": 4, "g": 1, "e": 2, "p": 1, "gf": 5, "gc": 6, "pts": 5 },
+    { "team": "Central Córdoba", "pj": 4, "g": 1, "e": 2, "p": 1, "gf": 2, "gc": 4, "pts": 5 },
+    { "team": "Instituto", "pj": 4, "g": 0, "e": 1, "p": 3, "gf": 3, "gc": 6, "pts": 1 },
+    { "team": "Deportivo Riestra", "pj": 4, "g": 0, "e": 1, "p": 3, "gf": 1, "gc": 4, "pts": 1 },
+    { "team": "Newell's", "pj": 4, "g": 0, "e": 1, "p": 3, "gf": 4, "gc": 8, "pts": 1 }
+  ],
+  "highlightTeam": "Boca Juniors"
+}
 
