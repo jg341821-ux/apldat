@@ -16,8 +16,14 @@
           "league": "Primera División",
           "dateISO": "2026-02-14T19:30:00-03:00",
           "dateText": "Sáb, 14/2, 19:30",
-          "home": { "name": "Boca Juniors", "badge": "assets/teams/boca.png" },
-          "away": { "name": "Platense", "badge": "assets/teams/platense.png" },
+          "home": {
+            "name": "Boca Juniors",
+            "badge": "https://commons.wikimedia.org/wiki/Special:FilePath/Boca%20juniors.png?width=256"
+          },
+          "away": {
+            "name": "Platense",
+            "badge": "https://commons.wikimedia.org/wiki/Special:FilePath/Club%20Atl%C3%A9tico%20Platense%20nuevo.png?width=256"
+          },
           "footer": "Apertura · Jornada 5",
           "thumb": "assets/thumbs/arg1.jpg"
         },
@@ -25,8 +31,14 @@
           "league": "Primera División",
           "dateISO": "2026-02-14T21:00:00-03:00",
           "dateText": "Sáb, 14/2, 21:00",
-          "home": { "name": "River", "badge": "assets/teams/river.png" },
-          "away": { "name": "San Lorenzo", "badge": "assets/teams/sanlorenzo.png" },
+          "home": {
+            "name": "River Plate",
+            "badge": "https://commons.wikimedia.org/wiki/Special:FilePath/Club%20Atl%C3%A9tico%20River%20Plate%20logo.svg?width=256"
+          },
+          "away": {
+            "name": "San Lorenzo",
+            "badge": "https://commons.wikimedia.org/wiki/Special:FilePath/Escudo%20del%20Club%20Atl%C3%A9tico%20San%20Lorenzo%20de%20Almagro.svg?width=256"
+          },
           "footer": "Apertura · Jornada 5",
           "thumb": "assets/thumbs/arg2.jpg"
         },
@@ -34,8 +46,14 @@
           "league": "Primera División",
           "dateISO": "2026-02-14T22:30:00-03:00",
           "dateText": "Sáb, 14/2, 22:30",
-          "home": { "name": "Racing", "badge": "assets/teams/racing.png" },
-          "away": { "name": "Independiente", "badge": "assets/teams/independiente.png" },
+          "home": {
+            "name": "Racing",
+            "badge": "https://commons.wikimedia.org/wiki/Special:FilePath/Escudo%20de%20Racing%20Club.svg?width=256"
+          },
+          "away": {
+            "name": "Independiente",
+            "badge": "https://commons.wikimedia.org/wiki/Special:FilePath/Escudo%20del%20Club%20Atl%C3%A9tico%20Independiente.svg?width=256"
+          },
           "footer": "Apertura · Jornada 5",
           "thumb": "assets/thumbs/arg3.jpg"
         }
@@ -52,8 +70,14 @@
           "league": "Bundesliga",
           "dateISO": "2026-02-14T15:30:00+01:00",
           "dateText": "Sa, 14/2, 15:30",
-          "home": { "name": "Bayern", "badge": "assets/teams/bayern.png" },
-          "away": { "name": "Dortmund", "badge": "assets/teams/dortmund.png" },
+          "home": {
+            "name": "Bayern",
+            "badge": "https://commons.wikimedia.org/wiki/Special:FilePath/FC%20Bayern%20M%C3%BCnchen%20logo%20(2017).svg?width=256"
+          },
+          "away": {
+            "name": "Dortmund",
+            "badge": "https://commons.wikimedia.org/wiki/Special:FilePath/Borussia%20Dortmund%20logo.svg?width=256"
+          },
           "footer": "Jornada 22",
           "thumb": "assets/thumbs/ger1.jpg"
         },
@@ -61,8 +85,14 @@
           "league": "Bundesliga",
           "dateISO": "2026-02-14T18:30:00+01:00",
           "dateText": "Sa, 14/2, 18:30",
-          "home": { "name": "Leverkusen", "badge": "assets/teams/leverkusen.png" },
-          "away": { "name": "Leipzig", "badge": "assets/teams/leipzig.png" },
+          "home": {
+            "name": "Leverkusen",
+            "badge": "https://commons.wikimedia.org/wiki/Special:FilePath/Logo%20TSV%20Bayer%2004%20Leverkusen.svg?width=256"
+          },
+          "away": {
+            "name": "Leipzig",
+            "badge": "https://commons.wikimedia.org/wiki/Special:FilePath/Rb-Leipzig.svg?width=256"
+          },
           "footer": "Jornada 22",
           "thumb": "assets/thumbs/ger2.jpg"
         }
@@ -79,8 +109,14 @@
           "league": "LaLiga",
           "dateISO": "2026-02-14T20:00:00+01:00",
           "dateText": "Sáb, 14/2, 20:00",
-          "home": { "name": "Barcelona", "badge": "assets/teams/barcelona.png" },
-          "away": { "name": "Valencia", "badge": "assets/teams/valencia.png" },
+          "home": {
+            "name": "Barcelona",
+            "badge": "https://en.wikipedia.org/wiki/Special:FilePath/FC_Barcelona_(crest).svg?width=256"
+          },
+          "away": {
+            "name": "Valencia",
+            "badge": "https://commons.wikimedia.org/wiki/Special:FilePath/FC%20Valencia%20-%20Escudo.png?width=256"
+          },
           "footer": "Jornada 25",
           "thumb": "assets/thumbs/esp1.jpg"
         },
@@ -88,8 +124,14 @@
           "league": "LaLiga",
           "dateISO": "2026-02-14T22:00:00+01:00",
           "dateText": "Sáb, 14/2, 22:00",
-          "home": { "name": "Real Madrid", "badge": "assets/teams/realmadrid.png" },
-          "away": { "name": "Sevilla", "badge": "assets/teams/sevilla.png" },
+          "home": {
+            "name": "Real Madrid",
+            "badge": "https://en.wikipedia.org/wiki/Special:FilePath/Real_Madrid_CF.svg?width=256"
+          },
+          "away": {
+            "name": "Sevilla",
+            "badge": "https://commons.wikimedia.org/wiki/Special:FilePath/SevillaFC_00-01.png?width=256"
+          },
           "footer": "Jornada 25",
           "thumb": "assets/thumbs/esp2.jpg"
         }
@@ -106,8 +148,14 @@
           "league": "Serie A",
           "dateISO": "2026-02-14T20:45:00+01:00",
           "dateText": "Sab, 14/2, 20:45",
-          "home": { "name": "Juventus", "badge": "assets/teams/juventus.png" },
-          "away": { "name": "Inter", "badge": "assets/teams/inter.png" },
+          "home": {
+            "name": "Juventus",
+            "badge": "https://commons.wikimedia.org/wiki/Special:FilePath/Juventus%20FC%202017%20logo.svg?width=256"
+          },
+          "away": {
+            "name": "Inter",
+            "badge": "https://commons.wikimedia.org/wiki/Special:FilePath/FC%20Internazionale%20Milano%202021.svg?width=256"
+          },
           "footer": "Jornada 24",
           "thumb": "assets/thumbs/ita1.jpg"
         },
@@ -115,8 +163,14 @@
           "league": "Serie A",
           "dateISO": "2026-02-14T18:00:00+01:00",
           "dateText": "Sab, 14/2, 18:00",
-          "home": { "name": "Milan", "badge": "assets/teams/milan.png" },
-          "away": { "name": "Napoli", "badge": "assets/teams/napoli.png" },
+          "home": {
+            "name": "Milan",
+            "badge": "https://commons.wikimedia.org/wiki/Special:FilePath/Logo%20of%20AC%20Milan.svg?width=256"
+          },
+          "away": {
+            "name": "Napoli",
+            "badge": "https://commons.wikimedia.org/wiki/Special:FilePath/SSC%20Napoli.svg?width=256"
+          },
           "footer": "Jornada 24",
           "thumb": "assets/thumbs/ita2.jpg"
         }
@@ -133,8 +187,14 @@
           "league": "Premier League",
           "dateISO": "2026-02-14T17:30:00+00:00",
           "dateText": "Sat, 14/2, 17:30",
-          "home": { "name": "Manchester City", "badge": "assets/teams/mancity.png" },
-          "away": { "name": "Liverpool", "badge": "assets/teams/liverpool.png" },
+          "home": {
+            "name": "Manchester City",
+            "badge": "https://en.wikipedia.org/wiki/Special:FilePath/Manchester_City_FC_badge.svg?width=256"
+          },
+          "away": {
+            "name": "Liverpool",
+            "badge": "https://en.wikipedia.org/wiki/Special:FilePath/Liverpool_FC.svg?width=256"
+          },
           "footer": "Matchweek 26",
           "thumb": "assets/thumbs/eng1.jpg"
         },
@@ -142,8 +202,14 @@
           "league": "Premier League",
           "dateISO": "2026-02-14T20:00:00+00:00",
           "dateText": "Sat, 14/2, 20:00",
-          "home": { "name": "Arsenal", "badge": "assets/teams/arsenal.png" },
-          "away": { "name": "Chelsea", "badge": "assets/teams/chelsea.png" },
+          "home": {
+            "name": "Arsenal",
+            "badge": "https://commons.wikimedia.org/wiki/Special:FilePath/Arsenal%20FC%20logo%20(2001-2002).svg?width=256"
+          },
+          "away": {
+            "name": "Chelsea",
+            "badge": "https://en.wikipedia.org/wiki/Special:FilePath/Chelsea_FC.svg?width=256"
+          },
           "footer": "Matchweek 26",
           "thumb": "assets/thumbs/eng2.jpg"
         }
@@ -160,8 +226,14 @@
           "league": "Ligue 1",
           "dateISO": "2026-02-14T21:00:00+01:00",
           "dateText": "Sam, 14/2, 21:00",
-          "home": { "name": "PSG", "badge": "assets/teams/psg.png" },
-          "away": { "name": "Marseille", "badge": "assets/teams/marseille.png" },
+          "home": {
+            "name": "PSG",
+            "badge": "https://commons.wikimedia.org/wiki/Special:FilePath/PSG%20Logo.svg?width=256"
+          },
+          "away": {
+            "name": "Marseille",
+            "badge": "https://commons.wikimedia.org/wiki/Special:FilePath/Olympique%20Marseille%20logo.svg?width=256"
+          },
           "footer": "Jornada 23",
           "thumb": "assets/thumbs/fra1.jpg"
         }
