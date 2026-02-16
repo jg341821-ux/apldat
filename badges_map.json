@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "missingBadge": "assets/escudos/_missing.png"
+  },
+  "leagues": {
+    "arg": {
+      "boca juniors": "assets/escudos/argentina/boca.png",
+      "river plate": "assets/escudos/argentina/river.png",
+      "san lorenzo": "assets/escudos/argentina/sanlorenzo.png",
+      "racing": "assets/escudos/argentina/racing.png",
+      "independiente": "assets/escudos/argentina/independiente.png",
+      "platense": "assets/escudos/argentina/platense.png"
+    },
+    "de": {
+      "bayern munich": "assets/escudos/alemania/bayernmunchen.png",
+      "borussia dortmund": "assets/escudos/alemania/borussiadortmund.png",
+      "bayer leverkusen": "assets/escudos/alemania/bayerleverkusen.png",
+      "rb leipzig": "assets/escudos/alemania/rbleipzig.png"
+    },
+    "eng": {
+      "manchester city": "assets/escudos/inglaterra/manchestercity.png",
+      "liverpool": "assets/escudos/inglaterra/liverpool.png",
+      "arsenal": "assets/escudos/inglaterra/arsenal.png",
+      "chelsea": "assets/escudos/inglaterra/chelsea.png"
+    },
+    "es": {
+      "barcelona": "assets/escudos/españa/barcelona.png",
+      "villarreal": "assets/escudos/españa/villarreal.png",
+      "real madrid": "assets/escudos/españa/realmadrid.png",
+      "atletico madrid": "assets/escudos/españa/atlmadrid.png"
+    },
+    "it": {
+      "juventus": "assets/escudos/italia/juventus.png",
+      "inter": "assets/escudos/italia/inter.png",
+      "napoli": "assets/escudos/italia/napoli.png",
+      "atalanta": "assets/escudos/italia/atalanta.png"
+    },
+    "fra": {
+      "paris saint-germain": "assets/escudos/francia/psg.png",
+      "psg": "assets/escudos/francia/psg.png",
+      "marseille": "assets/escudos/francia/olimpiquemarsella.png"
+    },
+    "ucl": {
+      "real madrid": "assets/escudos/champions_league/realmadrid.png",
+      "psg": "assets/escudos/champions_league/psg.png",
+      "bayern munich": "assets/escudos/champions_league/bayernmunchen.png",
+      "arsenal": "assets/escudos/champions_league/arsenal.png",
+      "barcelona": "assets/escudos/champions_league/barcelona.png",
+      "liverpool": "assets/escudos/champions_league/liverpool.png"
+    }
+  }
+}
