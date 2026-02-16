@@ -1,8 +1,10 @@
 import fs from "node:fs/promises";
 
 const DATA_PATH = process.env.DATA_PATH || "data.json";
+const BADGES_MAP_PATH = process.env.BADGES_MAP_PATH || "badges_map.json";
+const MISSING_BADGE = process.env.MISSING_BADGE || "assets/escudos/_missing.png";
 
-// Mapeo: tu league.id -> ESPN league code
+// Tu league.id -> ESPN league code
 const ESPN_LEAGUE = {
   ucl: "uefa.champions",
   arg: "arg.1",
@@ -10,29 +12,44 @@ const ESPN_LEAGUE = {
   es: "esp.1",
   it: "ita.1",
   eng: "eng.1",
-  fra: "fra.1",
+  fra: "fra.1"
 };
 
-const ARG_OFFSET_HOURS = 3; // -03:00 fijo (Argentina)
+const ARG_OFFSET_HOURS = 3; // -03:00 fijo
 
 function pad2(n) {
   return String(n).padStart(2, "0");
 }
 
+function normalizeTeamName(s) {
+  // Normalización fuerte para matchear ESPN vs tu mapa
+  // - minúsculas
+  // - sin acentos
+  // - sin puntos/dobles espacios
+  // - cambia & por "and"
+  return (s ?? "")
+    .toString()
+    .trim()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")      // saca acentos
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9\s-]/g, " ")        // saca símbolos raros
+    .replace(/\s+/g, " ")                // colapsa espacios
+    .trim();
+}
+
 function getArgentinaYmd() {
-  // Fecha “hoy” en Argentina, en formato YYYY-MM-DD
   const now = new Date();
-  // Pasamos a “hora Argentina” restando 3h a UTC del Date actual (aprox OK para “hoy”)
   const arg = new Date(now.getTime() - ARG_OFFSET_HOURS * 3600_000);
   return `${arg.getUTCFullYear()}-${pad2(arg.getUTCMonth() + 1)}-${pad2(arg.getUTCDate())}`;
 }
 
 function ymdToEspnDates(ymd) {
-  return ymd.replaceAll("-", ""); // YYYYMMDD
+  return ymd.replaceAll("-", "");
 }
 
 function toArgentinaISOFromUTC(utcIso) {
-  // ESPN suele devolver ISO en UTC (Z). Convertimos a -03:00.
   const d = new Date(utcIso);
   const arg = new Date(d.getTime() - ARG_OFFSET_HOURS * 3600_000);
 
@@ -47,33 +64,30 @@ function toArgentinaISOFromUTC(utcIso) {
 }
 
 function formatDateTextArgentina(argIso) {
-  // argIso ya viene con -03:00. Para construir el texto usamos el “argIso” convertido a Date.
-  // Ojo: Date parsea el offset.
   const dt = new Date(argIso);
 
   const weekday = new Intl.DateTimeFormat("es-AR", {
     weekday: "short",
-    timeZone: "America/Argentina/Buenos_Aires",
+    timeZone: "America/Argentina/Buenos_Aires"
   }).format(dt);
 
   const day = new Intl.DateTimeFormat("es-AR", {
     day: "numeric",
-    timeZone: "America/Argentina/Buenos_Aires",
+    timeZone: "America/Argentina/Buenos_Aires"
   }).format(dt);
 
   const month = new Intl.DateTimeFormat("es-AR", {
     month: "numeric",
-    timeZone: "America/Argentina/Buenos_Aires",
+    timeZone: "America/Argentina/Buenos_Aires"
   }).format(dt);
 
   const time = new Intl.DateTimeFormat("es-AR", {
     hour: "2-digit",
     minute: "2-digit",
     hour12: false,
-    timeZone: "America/Argentina/Buenos_Aires",
+    timeZone: "America/Argentina/Buenos_Aires"
   }).format(dt);
 
-  // “Lun, 16/2, 17:00”
   return `${weekday}, ${day}/${month}, ${time}`;
 }
 
@@ -85,23 +99,23 @@ async function fetchScoreboard(espnLeagueCode, ymd) {
   return await r.json();
 }
 
-function pickLogo(teamObj) {
-  const logos = teamObj?.logos;
-  if (Array.isArray(logos) && logos.length) return logos[0]?.href || "";
-  return "";
-}
-
 function buildFooter(comp) {
   const st = comp?.status?.type ?? {};
   const state = st?.state || "";   // pre / in / post
-  const detail = st?.detail || ""; // "Final", "45'+2", "3:00 PM", etc.
+  const detail = st?.detail || "";
 
   if (state === "in") return `EN VIVO · ${detail}`.trim();
   if (state === "post") return `Final · ${detail}`.trim();
   return detail || "";
 }
 
-function parseFixture(scoreboardJson, leagueNameForItem, maxItems = 12) {
+function pickLocalBadge(badgesMap, leagueId, teamName) {
+  const norm = normalizeTeamName(teamName);
+  const leagueMap = badgesMap?.leagues?.[leagueId] ?? {};
+  return leagueMap[norm] || badgesMap?.meta?.missingBadge || MISSING_BADGE;
+}
+
+function parseFixture(scoreboardJson, leagueNameForItem, leagueId, badgesMap, maxItems = 12) {
   const events = scoreboardJson?.events ?? [];
   const fixture = [];
 
@@ -122,23 +136,25 @@ function parseFixture(scoreboardJson, leagueNameForItem, maxItems = 12) {
     const homeTeam = home?.team ?? {};
     const awayTeam = away?.team ?? {};
 
+    const homeName = homeTeam?.displayName || homeTeam?.shortDisplayName || "";
+    const awayName = awayTeam?.displayName || awayTeam?.shortDisplayName || "";
+
     fixture.push({
       league: leagueNameForItem,
       dateISO,
       dateText,
       home: {
-        name: homeTeam?.displayName || homeTeam?.shortDisplayName || "",
-        badge: pickLogo(homeTeam), // URL online
+        name: homeName,
+        badge: pickLocalBadge(badgesMap, leagueId, homeName)
       },
       away: {
-        name: awayTeam?.displayName || awayTeam?.shortDisplayName || "",
-        badge: pickLogo(awayTeam), // URL online
+        name: awayName,
+        badge: pickLocalBadge(badgesMap, leagueId, awayName)
       },
-      footer: buildFooter(comp),
+      footer: buildFooter(comp)
     });
   }
 
-  // Orden: EN VIVO primero, luego por hora
   fixture.sort((a, b) => {
     const aLive = a.footer?.startsWith("EN VIVO") ? 0 : 1;
     const bLive = b.footer?.startsWith("EN VIVO") ? 0 : 1;
@@ -153,28 +169,28 @@ async function main() {
   const raw = await fs.readFile(DATA_PATH, "utf-8");
   const json = JSON.parse(raw);
 
+  const badgesRaw = await fs.readFile(BADGES_MAP_PATH, "utf-8");
+  const badgesMap = JSON.parse(badgesRaw);
+
   const ymd = getArgentinaYmd();
 
-  // Recorremos tus ligas y actualizamos fixture según su id
   for (const lg of json.leagues || []) {
     const code = ESPN_LEAGUE[lg.id];
     if (!code) continue;
 
     const sb = await fetchScoreboard(code, ymd);
 
-    // Usamos el “nombre” que ya tenés en el JSON para el campo fixture[].league
-    // (podés cambiarlo por sb?.leagues?.[0]?.name si querés)
-    const leagueNameForItem = lg.subtitle?.split("·")?.[1]?.trim() || lg.name || lg.label || "";
+    const leagueNameForItem =
+      (lg.subtitle?.split("·")?.[1]?.trim()) || lg.name || lg.label || "";
 
-    lg.fixture = parseFixture(sb, leagueNameForItem, 12);
+    lg.fixture = parseFixture(sb, leagueNameForItem, lg.id, badgesMap, 12);
   }
 
   await fs.writeFile(DATA_PATH, JSON.stringify(json, null, 2) + "\n", "utf-8");
-  console.log(`OK: updated ${DATA_PATH} for ${ymd}`);
+  console.log(`OK: updated ${DATA_PATH} for ${ymd} using LOCAL badges`);
 }
 
 main().catch((e) => {
   console.error(e);
   process.exit(1);
 });
-
