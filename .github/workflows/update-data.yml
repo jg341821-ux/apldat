@@ -1,0 +1,40 @@
+name: Update data.json (ESPN)
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/15 * * * *"  # cada 15 min (UTC)
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data-json
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run updater
+        env:
+          DATA_PATH: data.json  # si tu archivo se llama distinto, cambialo acá
+        run: node scripts/update-data.mjs
+
+      - name: Commit & push if changed
+        env:
+          DATA_PATH: data.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "${DATA_PATH}"
+          git diff --staged --quiet || git commit -m "chore: auto update ${DATA_PATH}"
+          git push
